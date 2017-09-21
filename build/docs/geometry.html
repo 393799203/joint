@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/prism.css">
+    <link rel="stylesheet" type="text/css" href="css/api.css">
+    <title>Geometry API</title>
+</head>
+<body>
+
+    <div class="docs-main">
+        <nav class="docs-nav">
+            <input class="docs-nav-search" type="text" placeholder="i.e. point">
+            <img class="docs-nav-search-clear" src="./images/clear.png" title="Clear Search">
+                <ul class="docs-nav-items">
+                    <li class="docs-nav-item">
+                        <a class="docs-nav-item-link" href="#g">g</a>
+                                <ul class="docs-nav-items">
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.normalizeAngle">normalizeAngle</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.snapToGrid">snapToGrid</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.toDeg">toDeg</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.toRad">toRad</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.bezier">bezier</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.bezier.curveThroughPoints">curveThroughPoints</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.bezier.getCurveControlPoints">getCurveControlPoints</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.bezier.getCurveDivider">getCurveDivider</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.bezier.getFirstControlPoints">getFirstControlPoints</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.bezier.getInversionSolver">getInversionSolver</a>
+                                                    </li>
+                                                </ul>        </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.ellipse">ellipse</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.ellipse.constructor">constructor</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.ellipse.fromRect">fromRect</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype">prototype</a>
+                                                                <ul class="docs-nav-items">
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.bbox">bbox</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.clone">clone</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.containsPoint">containsPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.equals">equals</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.inflate">inflate</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.intersectionWithLineFromCenterToPoint">intersectionWithLineFromCenterToPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.normalizedDistance">normalizedDistance</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.tangentTheta">tangentTheta</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.ellipse.prototype.toString">toString</a>
+                                                                    </li>
+                                                                </ul>        </li>
+                                                </ul>        </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.line">line</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.line.constructor">constructor</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.line.prototype">prototype</a>
+                                                                <ul class="docs-nav-items">
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.bearing">bearing</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.clone">clone</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.closestPoint">closestPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.closestPointNormalizedLength">closestPointNormalizedLength</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.intersect">intersect</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.intersection">intersection</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.length">length</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.midpoint">midpoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.pointAt">pointAt</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.squaredLength">squaredLength</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.toString">toString</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.line.prototype.vector">vector</a>
+                                                                    </li>
+                                                                </ul>        </li>
+                                                </ul>        </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.point">point</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.point.constructor">constructor</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.point.fromPolar">fromPolar</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.point.random">random</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.point.prototype">prototype</a>
+                                                                <ul class="docs-nav-items">
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.adhereToRect">adhereToRect</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.angleBetween">angleBetween</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.bearing">bearing</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.changeInAngle">changeInAngle</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.clone">clone</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.cross">cross</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.difference">difference</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.distance">distance</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.dot">dot</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.equals">equals</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.magnitude">magnitude</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.manhattanDistance">manhattanDistance</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.move">move</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.normalize">normalize</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.offset">offset</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.reflection">reflection</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.rotate">rotate</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.round">round</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.scale">scale</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.snapToGrid">snapToGrid</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.squaredDistance">squaredDistance</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.theta">theta</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.toJSON">toJSON</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.toPolar">toPolar</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.toString">toString</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.update">update</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.point.prototype.vectorAngle">vectorAngle</a>
+                                                                    </li>
+                                                                </ul>        </li>
+                                                </ul>        </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.polyline">polyline</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.polyline.prototype">prototype</a>
+                                                                <ul class="docs-nav-items">
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.polyline.prototype.convexHull">convexHull</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.polyline.prototype.toString">toString</a>
+                                                                    </li>
+                                                                </ul>        </li>
+                                                </ul>        </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.rect">rect</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.rect.constructor">constructor</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.rect.fromEllipse">fromEllipse</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.rect.prototype">prototype</a>
+                                                                <ul class="docs-nav-items">
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.bbox">bbox</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.bottomLeft">bottomLeft</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.bottomLine">bottomLine</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.bottomMiddle">bottomMiddle</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.center">center</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.clone">clone</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.containsPoint">containsPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.containsRect">containsRect</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.corner">corner</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.equals">equals</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.inflate">inflate</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.intersect">intersect</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.intersectionWithLineFromCenterToPoint">intersectionWithLineFromCenterToPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.leftLine">leftLine</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.leftMiddle">leftMiddle</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.moveAndExpand">moveAndExpand</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.normalize">normalize</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.origin">origin</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.pointNearestToPoint">pointNearestToPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.rightLine">rightLine</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.rightMiddle">rightMiddle</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.round">round</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.sideNearestToPoint">sideNearestToPoint</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.snapToGrid">snapToGrid</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.toJSON">toJSON</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.topLine">topLine</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.topMiddle">topMiddle</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.topRight">topRight</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.toString">toString</a>
+                                                                    </li>
+                                                                    <li class="docs-nav-item">
+                                                                        <a class="docs-nav-item-link" href="#g.rect.prototype.union">union</a>
+                                                                    </li>
+                                                                </ul>        </li>
+                                                </ul>        </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#g.scale">scale</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#g.scale.linear">linear</a>
+                                                    </li>
+                                                </ul>        </li>
+                                </ul>        </li>
+                </ul>        </nav>
+        <section class="docs-content">
+            <h1 class="docs-header">Geometry API</h1>
+<p>Together with <a href="vectorizer.html">Vectorizer</a>, Geometry is another lightweight library built-in to JointJS. This library implements many useful <strong>geometry operations</strong>. The geometry library does not have any dependencies and can be used standalone. Please see the download page that contains both the <a href="http://jointjs.com/download#geometry">development and minified versions</a> of this library.</p>
+
+            <div class="docs-items">
+                
+    <div id="g" class="docs-item">
+    <div id="g.normalizeAngle" class="docs-item">
+        <a href="#g.normalizeAngle" class="docs-item-anchor">
+            <h3 class="docs-item-header">g.normalizeAngle</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">normalizeAngle</span><span class="token punctuation">(</span>angle<span class="token punctuation">)</span></code></pre>
+        <p>Convert the <code class="highlighted">angle</code> to the range <code class="highlighted"><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">360</span><span class="token punctuation">]</span></code>.</p>
+        </div>
+    </div>
+    <div id="g.snapToGrid" class="docs-item">
+        <a href="#g.snapToGrid" class="docs-item-anchor">
+            <h3 class="docs-item-header">g.snapToGrid</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">snapToGrid</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> gridSize<span class="token punctuation">)</span></code></pre>
+        <p>Snap the value <code class="highlighted">val</code> to a grid of size <code class="highlighted">gridSize</code>.</p>
+        </div>
+    </div>
+    <div id="g.toDeg" class="docs-item">
+        <a href="#g.toDeg" class="docs-item-anchor">
+            <h3 class="docs-item-header">g.toDeg</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">toDeg</span><span class="token punctuation">(</span>rad<span class="token punctuation">)</span></code></pre>
+        <p>Convert radians <code class="highlighted">rad</code> to degrees.</p>
+        </div>
+    </div>
+    <div id="g.toRad" class="docs-item">
+        <a href="#g.toRad" class="docs-item-anchor">
+            <h3 class="docs-item-header">g.toRad</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">toRad</span><span class="token punctuation">(</span>deg<span class="token punctuation">,</span> over360<span class="token punctuation">)</span></code></pre>
+        <p>Convert degrees <code class="highlighted">deg</code> to radians. If <code class="highlighted">over360</code> is <code class="highlighted"><span class="token boolean">true</span></code>, do not modulate on 360 degrees.</p>
+        </div>
+    </div>
+    <div id="g.bezier" class="docs-item">
+    <div id="g.bezier.curveThroughPoints" class="docs-item">
+        <a href="#g.bezier.curveThroughPoints" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.bezier.curveThroughPoints</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>bezier<span class="token punctuation">.</span><span class="token function">curveThroughPoints</span><span class="token punctuation">(</span>points<span class="token punctuation">)</span></code></pre>
+        <p>Return the SVG path commands that define a cubic bezier curve going through the <code class="highlighted">points</code>.
+            This method automatically computes the cubic bezier control points necessary to create a smooth curve crossing <code class="highlighted">points</code>.</p>
+        </div>
+    </div>
+    <div id="g.bezier.getCurveControlPoints" class="docs-item">
+        <a href="#g.bezier.getCurveControlPoints" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.bezier.getCurveControlPoints</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>bezier<span class="token punctuation">.</span><span class="token function">getCurveControlPoints</span><span class="token punctuation">(</span>knots<span class="token punctuation">)</span></code></pre>
+        <p>Get open-ended Bezier Spline Control Points. <code class="highlighted">knots</code> should be Bezier spline points (at least two points!). Returns an array where the first item is an array of the first control points and the second item is an array of second control points.</p>
+
+        </div>
+    </div>
+    <div id="g.bezier.getCurveDivider" class="docs-item">
+        <a href="#g.bezier.getCurveDivider" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.bezier.getCurveDivider</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>bezier<span class="token punctuation">.</span><span class="token function">getCurveDivider</span><span class="token punctuation">(</span>p0<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">)</span></code></pre>
+        <p>Divide a Bezier curve into two at point defined by value <code class="highlighted">t ∈ <span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token operator">></span></code>. Uses the <a href="http://math.stackexchange.com/a/317867">deCasteljau algorithm</a>.</p>
+
+        </div>
+    </div>
+    <div id="g.bezier.getFirstControlPoints" class="docs-item">
+        <a href="#g.bezier.getFirstControlPoints" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.bezier.getFirstControlPoints</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>bezier<span class="token punctuation">.</span><span class="token function">getFirstControlPoints</span><span class="token punctuation">(</span>rhs<span class="token punctuation">)</span></code></pre>
+        <p>Solves a tridiagonal system for one of coordinates (x or y) of first Bezier control points. <code class="highlighted">rhs</code> is a right hand side vector. Returns a solution vector.</p>
+
+        </div>
+    </div>
+    <div id="g.bezier.getInversionSolver" class="docs-item">
+        <a href="#g.bezier.getInversionSolver" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.bezier.getInversionSolver</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>bezier<span class="token punctuation">.</span><span class="token function">getInversionSolver</span><span class="token punctuation">(</span>p0<span class="token punctuation">,</span> p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">)</span></code></pre>
+        <p>Solves an inversion problem -- Given the (x, y) coordinates of a point which lies on a parametric curve <code class="highlighted">x <span class="token operator">=</span> <span class="token function">x</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token operator">/</span><span class="token function">w</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span></code>, <code class="highlighted">y <span class="token operator">=</span> <span class="token function">y</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token operator">/</span><span class="token function">w</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span></code>, find the parameter value <code class="highlighted">t</code> which corresponds to that point. Returns a function that accepts a point and returns t.</p>
+
+        </div>
+    </div>
+    </div>
+    <div id="g.ellipse" class="docs-item">
+    <div id="g.ellipse.constructor" class="docs-item">
+        <a href="#g.ellipse.constructor" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.ellipse.constructor</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">ellipse</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span></code></pre>
+        <p>Return a new ellipse object with center at point <code class="highlighted">c</code> and parameters <code class="highlighted">a</code> and <code class="highlighted">b</code>.</p>
+        </div>
+    </div>
+    <div id="g.ellipse.fromRect" class="docs-item">
+        <a href="#g.ellipse.fromRect" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.ellipse.fromRect</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>ellipse<span class="token punctuation">.</span><span class="token function">fromRect</span><span class="token punctuation">(</span>rect<span class="token punctuation">)</span></code></pre>
+        <p>Returns a new ellipse object from the given rect.</p>
+
+        </div>
+    </div>
+    <div id="g.ellipse.prototype" class="docs-item">
+    <div id="g.ellipse.prototype.bbox" class="docs-item">
+        <a href="#g.ellipse.prototype.bbox" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.bbox</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">bbox</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the rectangle that is the bounding box of the ellipse.</p>
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.clone" class="docs-item">
+        <a href="#g.ellipse.prototype.clone" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.clone</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return another ellipse which is a clone of the ellipse.</p>
+
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.containsPoint" class="docs-item">
+        <a href="#g.ellipse.prototype.containsPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.containsPoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">containsPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+<p>Return <code class="highlighted"><span class="token boolean">true</span></code> if the point <code class="highlighted">p</code> is inside the ellipse (inclusive). Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.equals" class="docs-item">
+        <a href="#g.ellipse.prototype.equals" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.equals</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>otherEllipse<span class="token punctuation">)</span></code></pre>
+        <p>Returns <code class="highlighted"><span class="token boolean">true</span></code> if the ellipse equals the other ellipse.</p>
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.inflate" class="docs-item">
+        <a href="#g.ellipse.prototype.inflate" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.inflate</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature">
+    <code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>dx <span class="token punctuation">[</span><span class="token punctuation">,</span> dy<span class="token punctuation">]</span><span class="token punctuation">)</span></code>
+</pre>
+<p>
+    Return an ellipse inflated in axis <b>x</b> by <b>2 * dx</b> and in axis <b>y</b> by <b>2 * dy</b>.
+    When method is called with a single parameter, the resulting ellipse is inflated by <b>2 * dx</b> in both <b>x</b> and <b>y</b> axis.
+</p>
+
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.intersectionWithLineFromCenterToPoint" class="docs-item">
+        <a href="#g.ellipse.prototype.intersectionWithLineFromCenterToPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.intersectionWithLineFromCenterToPoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">intersectionWithLineFromCenterToPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> angle<span class="token punctuation">)</span></code></pre>
+        <p>Return the point on the boundary of the ellipse that is the intersection of the ellipse with a line starting in the center of the ellipse ending in the point <code class="highlighted">p</code>. If <code class="highlighted">angle</code> is specified, the intersection will take into account the rotation of the ellipse by <code class="highlighted">angle</code> degrees around its center.</p>
+
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.normalizedDistance" class="docs-item">
+        <a href="#g.ellipse.prototype.normalizedDistance" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.normalizedDistance</h5>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">normalizedDistance</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+Returns a normalized distance from the ellipse center to a point <code class="highlighted">p</code>.
+
+Returns a number <code class="highlighted">n</code> ( <code class="highlighted">n <span class="token operator">&lt;</span> <span class="token number">1</span></code> for points inside the ellipse, <code class="highlighted">n <span class="token operator">=</span> <span class="token number">1</span></code> for points laying at the ellipse boundary and <code class="highlighted">n <span class="token operator">></span> <span class="token number">1</span></code> for points outside the ellipse).
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.tangentTheta" class="docs-item">
+        <a href="#g.ellipse.prototype.tangentTheta" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.tangentTheta</h5>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">tangentTheta</span><span class="token punctuation">(</span>point<span class="token punctuation">)</span></code></pre>
+<p>Returns the angle between the x axis and the tangent from a <code class="highlighted">point</code>. It is valid for points laying on the ellipse boundary only.</p>
+
+        </div>
+    </div>
+    <div id="g.ellipse.prototype.toString" class="docs-item">
+        <a href="#g.ellipse.prototype.toString" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.ellipse.prototype.toString</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">ellipse<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns the ellipse represented as a string.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="g.line" class="docs-item">
+    <div id="g.line.constructor" class="docs-item">
+        <a href="#g.line.constructor" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.line.constructor</h4>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">line</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span></code></pre>
+<p>Return a new line object with starting at point <code class="highlighted">p1</code> ending at point <code class="highlighted">p2</code>. <code class="highlighted">p1</code> and <code class="highlighted">p2</code> are first passed through the <a href="#g.point.constructor"><code class="highlighted">point</code></a> constructor so they can also be passed in the string forms. Examples:</p>
+
+<pre><code class="highlighted"><span class="token keyword">var</span> l <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">line</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> l <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">g<span class="token punctuation">.</span>line</span><span class="token punctuation">(</span><span class="token string">'10 20'</span><span class="token punctuation">,</span> <span class="token string">'50 60'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> l <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">line</span><span class="token punctuation">(</span><span class="token string">'10@20'</span><span class="token punctuation">,</span> <span class="token string">'50@60'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+    </div>
+    <div id="g.line.prototype" class="docs-item">
+    <div id="g.line.prototype.bearing" class="docs-item">
+        <a href="#g.line.prototype.bearing" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.bearing</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">bearing</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the bearing (cardinal direction) of the line. The return value is a one of the following strings: <code class="highlighted"><span class="token string">'NE'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'SE'</span><span class="token punctuation">,</span> <span class="token string">'S'</span><span class="token punctuation">,</span> <span class="token string">'SW'</span><span class="token punctuation">,</span> <span class="token string">'W'</span><span class="token punctuation">,</span> <span class="token string">'NW'</span> and <span class="token string">'N'</span></code>.</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.clone" class="docs-item">
+        <a href="#g.line.prototype.clone" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.clone</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return another line which is a clone of the line.</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.closestPoint" class="docs-item">
+        <a href="#g.line.prototype.closestPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.closestPoint</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">closestPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+<p>Return the closest point laying on the line to the point <code class="highlighted">p</code>.</p>
+
+        </div>
+    </div>
+    <div id="g.line.prototype.closestPointNormalizedLength" class="docs-item">
+        <a href="#g.line.prototype.closestPointNormalizedLength" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.closestPointNormalizedLength</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">closestPointNormalizedLength</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+<p>Return the normalized length (distance from the start of the line / total line length) of the closest point laying on the line to the point <code class="highlighted">p</code>.</p>
+
+        </div>
+    </div>
+    <div id="g.line.prototype.intersect" class="docs-item">
+        <a href="#g.line.prototype.intersect" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.intersect</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">intersect</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span></code></pre>
+        <p>Return the intersection point of the line with another line <code class="highlighted">l</code>. A rectangle can also be passed in as the parameter, in which case, an array of intersection points with the line is returned. Return <code class="highlighted"><span class="token keyword">null</span></code> if there is no such point.</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.intersection" class="docs-item">
+        <a href="#g.line.prototype.intersection" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.intersection</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">intersection</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span></code></pre>
+        <p>Return the intersection point of the line with another line <code class="highlighted">l</code>. Return <code class="highlighted"><span class="token keyword">null</span></code> if there is no such point.</p>
+        <p>This has been <code class="highlighted">deprecated</code> in favor of <a href="#g.line.prototype.intersect">intersect</a>.</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.length" class="docs-item">
+        <a href="#g.line.prototype.length" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.length</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the length of the line.</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.midpoint" class="docs-item">
+        <a href="#g.line.prototype.midpoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.midpoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">midpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is in the middle of the line.</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.pointAt" class="docs-item">
+        <a href="#g.line.prototype.pointAt" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.pointAt</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">pointAt</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span></code></pre>
+        <p>Return a point on the line at length specified by a floating point number <code class="highlighted">t</code> from the interaval <code class="highlighted"><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span></code>. For example, if <code class="highlighted">t</code> equals <code class="highlighted"><span class="token number">0.5</span></code>, the function returns the midpoint of the line.</p>
+
+        </div>
+    </div>
+    <div id="g.line.prototype.squaredLength" class="docs-item">
+        <a href="#g.line.prototype.squaredLength" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.squaredLength</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">squaredLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the squared length of the line. Useful in cases the real length is not necessary (saves the Math.sqrt() operation).</p>
+        </div>
+    </div>
+    <div id="g.line.prototype.toString" class="docs-item">
+        <a href="#g.line.prototype.toString" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.toString</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns the line represented as a string.</p>
+
+        </div>
+    </div>
+    <div id="g.line.prototype.vector" class="docs-item">
+        <a href="#g.line.prototype.vector" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.line.prototype.vector</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">line<span class="token punctuation">.</span><span class="token function">vector</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Return the vector (point) of the line with length equals to length of the line.</p>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="g.point" class="docs-item">
+    <div id="g.point.constructor" class="docs-item">
+        <a href="#g.point.constructor" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.point.constructor</h4>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span>x <span class="token punctuation">[</span><span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Return a new point object with <code class="highlighted">x</code> and <code class="highlighted">y</code> coordinates. If <code class="highlighted">x</code> is a string, it is considered to be in the form <code class="highlighted"><span class="token string">"[number] [number]"</span></code> or <code class="highlighted"><span class="token string">"[number]@[number]"</span></code> where the first number is x coordinate and the second is y coordinate. Examples:</p>
+
+<pre><code class="highlighted"><span class="token keyword">var</span> p <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">g<span class="token punctuation">.</span>point</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span><span class="token string">'10 20'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span><span class="token string">'10@20'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">point</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+    </div>
+    <div id="g.point.fromPolar" class="docs-item">
+        <a href="#g.point.fromPolar" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.point.fromPolar</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>point<span class="token punctuation">.</span><span class="token function">fromPolar</span><span class="token punctuation">(</span>distance<span class="token punctuation">,</span> angle<span class="token punctuation">,</span> origin<span class="token punctuation">)</span></code></pre>
+        <p>Returns a new point object from the given <a href="http://en.wikipedia.org/wiki/Polar_coordinate_system">polar coordinates</a>.</p>
+
+        </div>
+    </div>
+    <div id="g.point.random" class="docs-item">
+        <a href="#g.point.random" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.point.random</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>point<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> y2<span class="token punctuation">)</span></code></pre>
+        <p>Returns a new point object with random coordinates that fall within the range <code class="highlighted"><span class="token punctuation">[</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">]</span></code> and <code class="highlighted"><span class="token punctuation">[</span>y1<span class="token punctuation">,</span> y2<span class="token punctuation">]</span></code>.</p>
+
+        </div>
+    </div>
+    <div id="g.point.prototype" class="docs-item">
+    <div id="g.point.prototype.adhereToRect" class="docs-item">
+        <a href="#g.point.prototype.adhereToRect" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.adhereToRect</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">adhereToRect</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>If the point lies outside the rectangle <code class="highlighted">r</code>, adjust the point so that it becomes the nearest point on the boundary of <code class="highlighted">r</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.angleBetween" class="docs-item">
+        <a href="#g.point.prototype.angleBetween" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.angleBetween</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">angleBetween</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span></code></pre>
+        <p>Computes the angle (in degrees) between the line passing through the point and point <code class="highlighted">p1</code> and the line passing through the point and point <code class="highlighted">p2</code>. The ordering of points <code class="highlighted">p1</code> and <code class="highlighted">p2</code> is important. The function returns a value between 0 and 180 degrees when the angle is counterclockwise, and a value between 180 and 360 degrees when the angle is clockwise. The function returns NaN if any of the points <code class="highlighted">p1</code> and <code class="highlighted">p2</code> are coincident with this point.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.bearing" class="docs-item">
+        <a href="#g.point.prototype.bearing" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.bearing</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">bearing</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return the bearing (cardinal direction) of the line between the point and another point <code class="highlighted">p</code>.
+      The return value is a one of the following strings: <code class="highlighted"><span class="token string">'NE'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'SE'</span><span class="token punctuation">,</span> <span class="token string">'S'</span><span class="token punctuation">,</span> <span class="token string">'SW'</span><span class="token punctuation">,</span> <span class="token string">'W'</span><span class="token punctuation">,</span> <span class="token string">'NW'</span> and <span class="token string">'N'</span></code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.changeInAngle" class="docs-item">
+        <a href="#g.point.prototype.changeInAngle" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.changeInAngle</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">changeInAngle</span><span class="token punctuation">(</span>dx<span class="token punctuation">,</span> dy<span class="token punctuation">,</span> ref<span class="token punctuation">)</span></code></pre>
+        <p>Return the change in angle that is the result of moving the point from its previous position (<code class="highlighted"><span class="token operator">-</span>dx</code>, <code class="highlighted"><span class="token operator">-</span>dy</code>) to its new position. 
+            This move is relative to the <code class="highlighted">ref</code> point and x axis.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.clone" class="docs-item">
+        <a href="#g.point.prototype.clone" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.clone</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return another point which is a clone of the point.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.cross" class="docs-item">
+        <a href="#g.point.prototype.cross" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.cross</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">cross</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span></code></pre>
+        <p>Return the cross product of the vector from the point passing through <code class="highlighted">p1</code> and the vector from the point passing through <code class="highlighted">p2</code>. The left-hand rule is used because the coordinate system is left-handed.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.difference" class="docs-item">
+        <a href="#g.point.prototype.difference" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.difference</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">difference</span><span class="token punctuation">(</span>dx <span class="token punctuation">[</span><span class="token punctuation">,</span> dy<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Return a point that has coordinates computed as a difference between the point and another point with coordinates <code class="highlighted">dx</code> and <code class="highlighted">dy</code>. If only 
+        <code class="highlighted">dx</code> is specified and is a number, <code class="highlighted">dy</code> is considered to be zero. If only <code class="highlighted">dx</code> is specified and is an object,
+        it is considered to be another point or an object in the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token punctuation">}</span></code></p>
+        </div>
+    </div>
+    <div id="g.point.prototype.distance" class="docs-item">
+        <a href="#g.point.prototype.distance" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.distance</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">distance</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return the distance between the point and another point <code class="highlighted">p</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.dot" class="docs-item">
+        <a href="#g.point.prototype.dot" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.dot</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">dot</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+<p>Return the dot product of this vector (point) and vector <code class="highlighted">p</code>.</p>
+
+        </div>
+    </div>
+    <div id="g.point.prototype.equals" class="docs-item">
+        <a href="#g.point.prototype.equals" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.equals</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if the point equals another point <code class="highlighted">p</code> Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.magnitude" class="docs-item">
+        <a href="#g.point.prototype.magnitude" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.magnitude</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the <a href="http://en.wikipedia.org/wiki/Magnitude_(mathematics)">magnitude</a> of the point vector.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.manhattanDistance" class="docs-item">
+        <a href="#g.point.prototype.manhattanDistance" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.manhattanDistance</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">manhattanDistance</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return the <a href="http://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> between the point and another point <code class="highlighted">p</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.move" class="docs-item">
+        <a href="#g.point.prototype.move" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.move</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> distance<span class="token punctuation">)</span></code></pre>
+        <p>Move the point on a line that leads to another point <code class="highlighted">ref</code> by a certain <code class="highlighted">distance</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.normalize" class="docs-item">
+        <a href="#g.point.prototype.normalize" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.normalize</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span></code></pre>
+        <p><a href="http://en.wikipedia.org/wiki/Unit_vector">Normalize</a> the point vector and return the point itself. In other words, 
+            scale the line segment between (0, 0) and the point in order for it to have a length of <code class="highlighted">len</code>. 
+            If len is not specified, it is considered to be <code class="highlighted"><span class="token number">1</span></code> in which case a unit vector is computed.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.offset" class="docs-item">
+        <a href="#g.point.prototype.offset" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.offset</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span>dx <span class="token punctuation">[</span><span class="token punctuation">,</span> dy<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Offset the point (change its <code class="highlighted">x</code> and <code class="highlighted">y</code> coordinates) by <code class="highlighted">dx</code> in x-axis and <code class="highlighted">dy</code> in y-axis. If only <code class="highlighted">dx</code> is specified and is a number, 
+        <code class="highlighted">dy</code> is considered to be zero. If only <code class="highlighted">dx</code> is specified and is a object, it is considered to be another point or an object in the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token punctuation">}</span></code></p>
+        </div>
+    </div>
+    <div id="g.point.prototype.reflection" class="docs-item">
+        <a href="#g.point.prototype.reflection" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.reflection</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">reflection</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return a point that is a reflection of the point with the center of reflection at point <code class="highlighted">p</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.rotate" class="docs-item">
+        <a href="#g.point.prototype.rotate" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.rotate</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> angle<span class="token punctuation">)</span></code></pre>
+        <p>Rotate the point by <code class="highlighted">angle</code> around the origin <code class="highlighted">o</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.round" class="docs-item">
+        <a href="#g.point.prototype.round" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.round</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token punctuation">[</span>precision<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Rounds the point to the given precision.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.scale" class="docs-item">
+        <a href="#g.point.prototype.scale" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.scale</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">scale</span><span class="token punctuation">(</span>sx<span class="token punctuation">,</span> sy<span class="token punctuation">,</span> origin<span class="token punctuation">)</span></code></pre>
+        <p>Scale point by <code class="highlighted">sx</code> and <code class="highlighted">sy</code> about the given origin.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.snapToGrid" class="docs-item">
+        <a href="#g.point.prototype.snapToGrid" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.snapToGrid</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">snapToGrid</span><span class="token punctuation">(</span>gridSize<span class="token punctuation">,</span> <span class="token punctuation">[</span>gridSizeY<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Snap the point (change its <code class="highlighted">x</code> and <code class="highlighted">y</code> coordinates) to a grid of size <code class="highlighted">gridSize</code> (or <code class="highlighted">gridSize</code> x <code class="highlighted">gridSizeY</code> for non-uniform grid).</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.squaredDistance" class="docs-item">
+        <a href="#g.point.prototype.squaredDistance" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.squaredDistance</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">squaredDistance</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+<p>Return the squared distance between the point and another point <code class="highlighted">p</code>.</p>
+
+        </div>
+    </div>
+    <div id="g.point.prototype.theta" class="docs-item">
+        <a href="#g.point.prototype.theta" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.theta</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">theta</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return the angle (in degrees) between the point, another point <code class="highlighted">p</code> and the x-axis.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.toJSON" class="docs-item">
+        <a href="#g.point.prototype.toJSON" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.toJSON</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point as a simple JSON object. For example: <code class="highlighted"><span class="token punctuation">{</span> <span class="token string">"x"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"y"</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span></code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.toPolar" class="docs-item">
+        <a href="#g.point.prototype.toPolar" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.toPolar</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">toPolar</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span></code></pre>
+        <p>Convert rectangular to polar coordinates. If the origin <code class="highlighted">o</code> is not specified, it is considered to be at (0,0).</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.toString" class="docs-item">
+        <a href="#g.point.prototype.toString" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.toString</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns the point as a string <code class="highlighted">x@y</code>.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.update" class="docs-item">
+        <a href="#g.point.prototype.update" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.update</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span></code></pre>
+        <p>Update the point <code class="highlighted">x</code> and <code class="highlighted">y</code> coordinates with new values and return the point itself. Useful for chaining.</p>
+        </div>
+    </div>
+    <div id="g.point.prototype.vectorAngle" class="docs-item">
+        <a href="#g.point.prototype.vectorAngle" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.point.prototype.vectorAngle</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">vectorAngle</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Computes the angle (in degrees) between the line passing through the point (0,0) and this point and the line passing through the point (0,0) and point <code class="highlighted">p</code>. The function returns a value between 0 and 180 degrees when the angle is counterclockwise, and a value between 180 and 360 degrees when the angle is clockwise. The function returns NaN if called from point (0,0) or if <code class="highlighted">p</code> is (0,0).</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="g.polyline" class="docs-item">
+    <div id="g.polyline.prototype" class="docs-item">
+    <div id="g.polyline.prototype.convexHull" class="docs-item">
+        <a href="#g.polyline.prototype.convexHull" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.polyline.prototype.convexHull</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">polyline<span class="token punctuation">.</span><span class="token function">convexHull</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns a polyline containing the convex hull of this polyline's points. The output polyline begins with the first point of this polyline that is on the hull. The convex hull points then follow in clockwise order. The minimum number of points is reported. This means that collinear points lying in the middle of hull edges are not reported. If a group of coincident points is encountered, only the first point (in order of the original polyline) is reported.</p>
+        </div>
+    </div>
+    <div id="g.polyline.prototype.toString" class="docs-item">
+        <a href="#g.polyline.prototype.toString" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.polyline.prototype.toString</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">polyline<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns the polyline as a string in the form <code class="highlighted">x1@y1<span class="token punctuation">,</span>x2@y2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code>.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="g.rect" class="docs-item">
+    <div id="g.rect.constructor" class="docs-item">
+        <a href="#g.rect.constructor" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.rect.constructor</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span><span class="token function">rect</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">)</span></code></pre>
+        <p>Return a new rectangle object with top left corner at point with coordinates <code class="highlighted">x</code>, <code class="highlighted">y</code> and dimensions <code class="highlighted">width</code> and <code class="highlighted">height</code>. If only <code class="highlighted">x</code> is specified, it is considered to be an object in the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token punctuation">}</span></code> in which case a copy of the rectangle is returned.</p>
+        </div>
+    </div>
+    <div id="g.rect.fromEllipse" class="docs-item">
+        <a href="#g.rect.fromEllipse" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.rect.fromEllipse</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>rect<span class="token punctuation">.</span><span class="token function">fromEllipse</span><span class="token punctuation">(</span>ellipse<span class="token punctuation">)</span></code></pre>
+        <p>Returns a new rectangle object from the given ellipse.</p>
+
+        </div>
+    </div>
+    <div id="g.rect.prototype" class="docs-item">
+    <div id="g.rect.prototype.bbox" class="docs-item">
+        <a href="#g.rect.prototype.bbox" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.bbox</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">bbox</span><span class="token punctuation">(</span>angle<span class="token punctuation">)</span></code></pre>
+        <p>Return a rectangle that is the bounding box of the rectangle taking into account its rotation around center specified by <code class="highlighted">angle</code> degrees.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.bottomLeft" class="docs-item">
+        <a href="#g.rect.prototype.bottomLeft" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.bottomLeft</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">bottomLeft</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is the bottom left corner of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.bottomLine" class="docs-item">
+        <a href="#g.rect.prototype.bottomLine" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.bottomLine</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">bottomLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the bottom line of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.bottomMiddle" class="docs-item">
+        <a href="#g.rect.prototype.bottomMiddle" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.bottomMiddle</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">bottomMiddle</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is at the bottom middle of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.center" class="docs-item">
+        <a href="#g.rect.prototype.center" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.center</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">center</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is the center of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.clone" class="docs-item">
+        <a href="#g.rect.prototype.clone" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.clone</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return another rectangle which is a clone of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.containsPoint" class="docs-item">
+        <a href="#g.rect.prototype.containsPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.containsPoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">containsPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if the point <code class="highlighted">p</code> is inside the rectangle (inclusive). Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.containsRect" class="docs-item">
+        <a href="#g.rect.prototype.containsRect" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.containsRect</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">containsRect</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if the rectangle <code class="highlighted">r</code> is inside the rectangle (inclusive). Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.corner" class="docs-item">
+        <a href="#g.rect.prototype.corner" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.corner</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">corner</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is the bottom right corner of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.equals" class="docs-item">
+        <a href="#g.rect.prototype.equals" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.equals</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if the rectangle equals another rectangle <code class="highlighted">r</code> Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.inflate" class="docs-item">
+        <a href="#g.rect.prototype.inflate" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.inflate</h5>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature">
+    <code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>dx <span class="token punctuation">[</span><span class="token punctuation">,</span> dy<span class="token punctuation">]</span><span class="token punctuation">)</span></code>
+</pre>
+<p>
+    Return a rectangle inflated in axis <b>x</b> by <b>2 * dx</b> and in axis <b>y</b> by <b>2 * dy</b>.
+    When method is called with a single parameter, the resulting rectangle is inflated by <b>2 * dx</b> in both <b>x</b> and <b>y</b> axis.
+</p>
+
+        </div>
+    </div>
+    <div id="g.rect.prototype.intersect" class="docs-item">
+        <a href="#g.rect.prototype.intersect" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.intersect</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">intersect</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>Return a rectangle object that is a subtraction of the two rectangles if such an object exists (the two rectangles intersect). Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.intersectionWithLineFromCenterToPoint" class="docs-item">
+        <a href="#g.rect.prototype.intersectionWithLineFromCenterToPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.intersectionWithLineFromCenterToPoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">intersectionWithLineFromCenterToPoint</span><span class="token punctuation">(</span>p <span class="token punctuation">[</span><span class="token punctuation">,</span> angle<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point on the boundary of the rectangle that is the intersection of the rectangle 
+            with a line starting in the center of the rectangle ending in the point <code class="highlighted">p</code>. 
+            If <code class="highlighted">angle</code> is specified, the intersection will take into account 
+            the rotation of the rectangle by <code class="highlighted">angle</code> degrees around its center.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.leftLine" class="docs-item">
+        <a href="#g.rect.prototype.leftLine" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.leftLine</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">leftLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the left line of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.leftMiddle" class="docs-item">
+        <a href="#g.rect.prototype.leftMiddle" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.leftMiddle</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">leftMiddle</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is at the left middle of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.moveAndExpand" class="docs-item">
+        <a href="#g.rect.prototype.moveAndExpand" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.moveAndExpand</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">moveAndExpand</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>Offset the rectangle by <code class="highlighted">r<span class="token punctuation">.</span>x</code> and <code class="highlighted">r<span class="token punctuation">.</span>y</code> and expand it by <code class="highlighted">r<span class="token punctuation">.</span>width</code> and <code class="highlighted">r<span class="token punctuation">.</span>height</code>.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.normalize" class="docs-item">
+        <a href="#g.rect.prototype.normalize" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.normalize</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Normalize the rectangle, i.e. make it so that it has non-negative width and height. If width is less than <code class="highlighted"><span class="token number">0</span></code>, the function swaps left and right corners and if height is less than <code class="highlighted"><span class="token number">0</span></code>, the top and bottom corners are swapped.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.origin" class="docs-item">
+        <a href="#g.rect.prototype.origin" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.origin</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">origin</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is the top left corner of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.pointNearestToPoint" class="docs-item">
+        <a href="#g.rect.prototype.pointNearestToPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.pointNearestToPoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">pointNearestToPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return the point on the boundary of the rectangle nearest to the point <code class="highlighted">p</code>.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.rightLine" class="docs-item">
+        <a href="#g.rect.prototype.rightLine" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.rightLine</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">rightLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the right line of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.rightMiddle" class="docs-item">
+        <a href="#g.rect.prototype.rightMiddle" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.rightMiddle</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">rightMiddle</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is at the right middle of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.round" class="docs-item">
+        <a href="#g.rect.prototype.round" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.round</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token punctuation">[</span>precision<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Rounds the rectangle to the given precision.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.sideNearestToPoint" class="docs-item">
+        <a href="#g.rect.prototype.sideNearestToPoint" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.sideNearestToPoint</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">sideNearestToPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Return the <code class="highlighted"><span class="token string">"top"</span></code>, <code class="highlighted"><span class="token string">"left"</span></code>, <code class="highlighted"><span class="token string">"right"</span></code> or <code class="highlighted"><span class="token string">"bottom"</span></code> string denoting the side of the rectangle which is nearest to the point <code class="highlighted">p</code>.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.snapToGrid" class="docs-item">
+        <a href="#g.rect.prototype.snapToGrid" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.snapToGrid</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">snapToGrid</span><span class="token punctuation">(</span>gx<span class="token punctuation">,</span> gy<span class="token punctuation">)</span></code></pre>
+        <p>Adjust the position and dimensions of the rectangle such that its edges are on the nearest increment of <code class="highlighted">gx</code> on the x-axis and <code class="highlighted">gy</code> on the y-axis.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.toJSON" class="docs-item">
+        <a href="#g.rect.prototype.toJSON" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.toJSON</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the rectangle as a simple JSON object. For example: <code class="highlighted"><span class="token punctuation">{</span> <span class="token string">"x"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"y"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"width"</span><span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token string">"height"</span><span class="token punctuation">:</span> <span class="token number">40</span> <span class="token punctuation">}</span></code>.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.topLine" class="docs-item">
+        <a href="#g.rect.prototype.topLine" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.topLine</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">topLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the top line of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.topMiddle" class="docs-item">
+        <a href="#g.rect.prototype.topMiddle" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.topMiddle</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">topMiddle</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is at the top middle of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.topRight" class="docs-item">
+        <a href="#g.rect.prototype.topRight" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.topRight</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">topRight</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the point that is the top right corner of the rectangle.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.toString" class="docs-item">
+        <a href="#g.rect.prototype.toString" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.toString</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">point<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns the rectangle as a string <code class="highlighted">x@y x@y</code>.</p>
+        </div>
+    </div>
+    <div id="g.rect.prototype.union" class="docs-item">
+        <a href="#g.rect.prototype.union" class="docs-item-anchor">
+            <h5 class="docs-item-header">g.rect.prototype.union</h5>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">rect<span class="token punctuation">.</span><span class="token function">union</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>Return a rectangle object that is a union of the two rectangles.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="g.scale" class="docs-item">
+    <div id="g.scale.linear" class="docs-item">
+        <a href="#g.scale.linear" class="docs-item-anchor">
+            <h4 class="docs-item-header">g.scale.linear</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">g<span class="token punctuation">.</span>scale<span class="token punctuation">.</span><span class="token function">linear</span><span class="token punctuation">(</span>domain<span class="token punctuation">,</span> range<span class="token punctuation">,</span> value<span class="token punctuation">)</span></code></pre>
+        <p>Return the <code class="highlighted">value</code> from the <code class="highlighted">domain</code> interval linearly scaled to the <code class="highlighted">range</code> interval. Both <code class="highlighted">domain</code> and <code class="highlighted">range</code> intervals must be specified as arrays with two numbers specifying start and end of the interval.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/api.js"></script>
+
+</body>
+</html>
